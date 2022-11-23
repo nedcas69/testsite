@@ -9,10 +9,21 @@
             <li class="nav-item">
             <a class="nav-link active" href="{% url 'home' %}">Главная</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link active" href="{% url 'add_news' %}">Добавить новость</a>
-            </li>
+            {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                <a class="nav-link active" href="{% url 'add_news' %}">Добавить новость</a>
+                </li>
+            {% endif %}
         </ul>
+        <span class="navbar-text">
+
+            {% if request.user.is_authenticated %}
+            Добро пожаловать, {{ user.username }} | <a href=" {% url 'logout' %} ">Выход</a> 
+            {% else %}
+            <a href=" {% url 'registers' %} ">Register</a> | <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+                
+        </span>
         </div>
     </div>
 </nav>

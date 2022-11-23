@@ -1,0 +1,29 @@
+#header,
+.module h2, .module caption, .inline-group h2{
+    background: #c5c5c5;
+    color: #006aa0;
+    font-weight: bold;
+}
+#branding h1 a:link, #branding h1 a:visited {
+    color: #006aa0;
+    font-weight: bold;
+}
+#user-tools, #logout-form button {
+    color: #006aa0;
+    font-weight: bold;
+}
+#user-tools a, #logout-form button {
+    color: #a00000;
+    font-weight: bold;
+}
+div.breadcrumbs{
+    background: #a40000;
+} 
+#nav-sidebar .current-model {
+    background: #e5e5e5;
+}
+
+#nav-sidebar .current-app .section:link, #nav-sidebar .current-app .section:visited {
+    color: #006aa0;
+    font-weight: bold;
+}
