@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,7 +18,10 @@
     <div class="row mr-auto">
         
         <div class='col-md-3'>
+            {% comment %} {% load cache %}
+            {% cache 500 sidebar %} {% endcomment %}
             {% block sidebar %}SIDEBAR{% endblock %}
+            {% comment %} {% endcache %} {% endcomment %}
         </div>
 
         <div class='col-md-9'>

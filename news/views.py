@@ -42,21 +42,21 @@ def user_logout(request):
     logout(request)
     return redirect('/login/')
 
-def test(request):
+def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
             mail = send_mail(form.cleaned_data['subject'], form.cleaned_data['content'], 'nedcas@mail.ru', ['tesla15071991@gmail.com'], fail_silently=False )
             if mail:
                 messages.success(request, 'Письмо отправлено')
-                return redirect('/test/')
+                return redirect('/contact/')
             else:
                 messages.error(request, 'Ошибка отправки')
         else:
             messages.error(request, 'Ошибка регистрации')
     else:
         form = ContactForm()
-    return render(request, 'news/test.html', {"form": form} )
+    return render(request, 'news/contact.html', {"form": form} )
 
 
 class HomeNews(MyMixin,ListView):
